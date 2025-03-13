@@ -1,9 +1,13 @@
 import './CartWidget.css';
+import { FaCartShopping } from "react-icons/fa6";
 
 function CartWidget() {
 
   return (
-    <p>🛒(5)</p>
+    <>
+      <FaCartShopping color="blue" />
+      <p>(5)</p>
+    </>
   );
 };
 

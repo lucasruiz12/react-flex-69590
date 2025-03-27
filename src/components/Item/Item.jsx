@@ -1,23 +1,17 @@
+import { Link } from 'react-router';
 import './Item.css';
 
-function Item({ producto, filtrarProducto }) {
+function Item({ producto }) {
 
-    const { nombre, precio, stock } = producto;
+    const { id, nombre, precio, stock } = producto;
 
-    function agregarAlCarrito(prod){
+    function agregarAlCarrito(prod) {
         const nuevoProducto = {
             ...prod,
             cantidad: 1,
         };
 
         console.log("Vas a agregar", nuevoProducto);
-
-        // console.log("Vas a agregar", {...prod, cantidad: 1});
-
-        // Este es un mini spoiler de cómo vamos a agregar al carrito
-        // const array = [1,2,3];
-        // array.push(4);
-        // console.log([...array, 5])
     };
 
     return (
@@ -26,7 +20,9 @@ function Item({ producto, filtrarProducto }) {
             <h5 className="card-body">Precio: ${precio}</h5>
             <p>Quedan {stock} disponibles</p>
             <button className="btn btn-secondary my-2" onClick={() => agregarAlCarrito(producto)}>Agregar al carrito</button>
-            <button className="btn btn-secondary my-2" onClick={() => filtrarProducto(producto)}>Ver detalle</button>
+            <Link to={`/detalle/${id}`}>
+                <button className="btn btn-secondary my-2">Ver detalle</button>
+            </Link>
         </div>
     );
 };

@@ -35,4 +35,13 @@ export const productos = [
         descripcion: "Funda solo apta para millonarios",
         img: "",
     },
+    {
+        id: 5,
+        nombre: "Mouse",
+        precio: 40,
+        categoria: "computadora",
+        stock: 12,
+        descripcion: "Es inalámbrico",
+        img: "",
+    },
 ];

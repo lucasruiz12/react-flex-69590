@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router';
 import { fetchData } from '../../fetchData';
 import Loader from '../Loader/Loader';
+import { useAppContext } from '../../context/context';
 
 function ItemDetail() {
 
@@ -13,14 +14,7 @@ function ItemDetail() {
     const [producto, setProducto] = useState(null);
     const [contador, setContador] = useState(1);
 
-    function agregarAlCarrito(prod) {
-        const nuevoProducto = {
-            ...prod,
-            cantidad: contador,
-        };
-        console.log("Vas a agregar", nuevoProducto);
-        setContador(1);
-    };
+    const { agregarAlCarrito } = useAppContext();
 
     useEffect(() => {
         fetchData()
@@ -53,7 +47,7 @@ function ItemDetail() {
 
                                 <ItemCount stock={producto.stock} contador={contador} setContador={setContador} />
 
-                                <button className="btn btn-secondary my-2" onClick={() => agregarAlCarrito(producto)}>Agregar al carrito</button>
+                                <button className="btn btn-secondary my-2" onClick={() => agregarAlCarrito(producto, contador)}>Agregar al carrito</button>
                                 <Link to="/">
                                     <button className="btn btn-secondary my-2">Volver al inicio</button>
                                 </Link>

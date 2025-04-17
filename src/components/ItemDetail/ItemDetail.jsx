@@ -1,10 +1,10 @@
-import './ItemDetail.css';
-import ItemCount from '../ItemCount/ItemCount';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router';
-import { fetchData } from '../../fetchData';
-import Loader from '../Loader/Loader';
 import { useAppContext } from '../../context/context';
+import { fetchData } from '../../fetchData';
+import ItemCount from '../ItemCount/ItemCount';
+import Loader from '../Loader/Loader';
+import './ItemDetail.css';
 
 function ItemDetail() {
 

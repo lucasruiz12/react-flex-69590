@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
-import './Item.css';
 import { useAppContext } from '../../context/context';
+import './Item.css';
 
 function Item({ producto }) {
 

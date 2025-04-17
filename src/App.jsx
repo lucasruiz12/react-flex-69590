@@ -6,7 +6,7 @@ import ItemDetail from './components/ItemDetail/ItemDetail';
 import { ContextProvider } from './context/context';
 
 function App() {
-
+  // Paso 4.
   return (
     <ContextProvider>
       <BrowserRouter>

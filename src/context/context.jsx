@@ -1,12 +1,10 @@
 import { createContext, useContext, useState } from "react";
 
-const AppContext = createContext();
+const AppContext = createContext(); // 1.
 
-export const useAppContext = () => useContext(AppContext);
+export const useAppContext = () => useContext(AppContext); // 5.
 
-export const ContextProvider = (props) => {
-
-    const numero = 1;
+export const ContextProvider = (props) => { // 2.
 
     const [carrito, setCarrito] = useState([]);
 
@@ -20,11 +18,11 @@ export const ContextProvider = (props) => {
             const newCarrito = carrito.map(element => {
                 if (element.id === prod.id) {
                     return {
-                        ...el,
-                        cantidad: el.cantidad + prod.cantidad
+                        ...element,
+                        cantidad: element.cantidad + cantidad
                     }
                 } else {
-                    return el;
+                    return element;
                 };
             })
             setCarrito(newCarrito);
@@ -32,18 +30,28 @@ export const ContextProvider = (props) => {
             setCarrito([...carrito, nuevoProducto]);
         };
 
-
-        console.log("Vas a agregar", nuevoProducto);
-
-        setTimeout(() => {
-            console.log(carrito);
-        }, 1000);
-
+        // console.log(carrito);
     };
 
+    // Cómo sumamos las cantidades?
+
+    /*
+    
+    array.reduce((acc, el) => acc + el.cantidad , 0) // Esta es la óptima
+    array.reduce((acc, el) => acc + (el.cantidad * el.precio) , 0) // Esta es la óptima
+
+    ----
+
+    let cantidadDeProductos = 0;
+    array.forEach(el => cantidadDeProductos += el.cantidad)
+    array.forEach(el => cantidadDeProductos += el.cantidad * el.precio)
+    
+    */
+
+    // Abajo va el paso 3
     return (
-        <AppContext.Provider value={{ numero, carrito, agregarAlCarrito }}>
+        <AppContext.Provider value={{ carrito, agregarAlCarrito }}>
             {props.children}
         </AppContext.Provider>
-    )
-}
+    );
+};

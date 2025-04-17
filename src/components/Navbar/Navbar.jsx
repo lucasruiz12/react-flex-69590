@@ -18,7 +18,6 @@ function Navbar() {
                     <Link to="/categoria/celular">
                         <li>Celular</li>
                     </Link>
-
                 </ul>
                 <Link to="/carrito">
                     <CartWidget />

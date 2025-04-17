@@ -4,7 +4,7 @@ import './CartWidget.css';
 
 function CartWidget() {
 
-  const { numero, carrito } = useAppContext();
+  const { carrito } = useAppContext();
 
   return (
     <>

@@ -5,7 +5,8 @@ import Loader from '../Loader/Loader';
 import Item from '../Item/Item';
 import './ItemListContainer.css';
 import { db } from '../../firebaseConfig';
-import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
+import { collection, getDocs, } from 'firebase/firestore';
+// import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
 
 function ItemListContainer() {
 
@@ -15,22 +16,22 @@ function ItemListContainer() {
   const { categoria } = useParams();
 
   const productosCollection = collection(db, "productos");
-  const ordenesCollection = collection(db, "ordenes");
+  // const ordenesCollection = collection(db, "ordenes");
 
-  const crearOrden = () => {
+  // const crearOrden = () => {
 
-    const nuevaOrden = {
-      nombre: "Lucas",
-      telefono: 4232323,
-      mail: "lucas@aguantegimnasia.com.ar"
-    }
+  //   const nuevaOrden = {
+  //     nombre: "Lucas",
+  //     telefono: 4232323,
+  //     mail: "lucas@aguantegimnasia.com.ar"
+  //   }
 
-    addDoc(ordenesCollection, nuevaOrden).then(response => {
-      console.log("Creaste correctamente tu orden con el id:", response.id);
-    })
-    .catch(err => console.error(err));
+  //   addDoc(ordenesCollection, nuevaOrden).then(response => {
+  //     console.log("Creaste correctamente tu orden con el id:", response.id);
+  //   })
+  //   .catch(err => console.error(err));
 
-  };
+  // };
 
   // const filtrarDocumentos = () => {
   //   const productos = query(
@@ -89,7 +90,7 @@ function ItemListContainer() {
                 );
               })}
         </div>
-        <button onClick={() => crearOrden()} className="btn btn-primary">Cargar</button>
+        {/* <button onClick={() => crearOrden()} className="btn btn-primary">Cargar</button> */}
       </div>
   );
 };

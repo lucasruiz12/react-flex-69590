@@ -1,8 +1,18 @@
-# React + Vite project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Proyecto final - ReactJS 69590 Coder
 
-Currently, two official plugins are available:
+Este proyecto es una SPA de ReactJS hecha con VITE y deployada en Netlify.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Instalación
+
+Para instalar el proyecto, lo descargamos y luego ejecutamos
+
+```bash
+  npm install
+```
+    
+## Authors
+
+- [Lucas Gabriel Ruiz](https://www.github.com/lucasruiz12)
+

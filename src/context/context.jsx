@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { toast } from "react-toastify";
 
 const AppContext = createContext(); // 1.
 
@@ -29,6 +30,8 @@ export const ContextProvider = (props) => { // 2.
         } else {
             setCarrito([...carrito, nuevoProducto]);
         };
+
+        toast("Producto agregado correctamente");
 
         // console.log(carrito);
     };

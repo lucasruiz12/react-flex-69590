@@ -6,6 +6,7 @@ import Item from '../Item/Item';
 import './ItemListContainer.css';
 import { db } from '../../firebaseConfig';
 import { collection, getDocs, } from 'firebase/firestore';
+import { toast } from 'react-toastify';
 // import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
 
 function ItemListContainer() {
@@ -55,6 +56,7 @@ function ItemListContainer() {
       fetchData()
         .then(response => {
           setTodosLosProductos(response);
+          toast("Productos cargados correctamente");
           setTimeout(() => {
             setLoading(false);
           }, 500);
